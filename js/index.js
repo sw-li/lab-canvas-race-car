@@ -14,7 +14,7 @@ let canvasObj = {
     this.ctx.fillText("GAME OVER", 250, 350)
   },
   interval:undefined,
-  gameSpeed:2,
+  gameSpeed:1,
   score:0
 }
 
@@ -143,13 +143,13 @@ function updateObstacles(){
 
   obstacles.push(new Componant(0,0,leftObstacleWidth,10,randomColor()))
   obstacles.push(new Componant(leftObstacleWidth+gap,0,500-leftObstacleWidth-gap,10,randomColor())) 
+  }
   // delete used componants when their y is bigger than 700, which add 5 points to the score. 
   for(let i = 0; i< obstacles.length; i++){
     if(obstacles[i].y > 710) {
       canvasObj.score += 1 
       obstacles.splice(i,1)
     } 
-  }
   }
 }
 
